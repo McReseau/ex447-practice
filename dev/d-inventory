@@ -1,0 +1,3 @@
+node1 ansible_ssh=54.193.163.178
+node2 ansible_ssh=52.53.219.106 ansible_python_interpreter=/usr/bin/python3
+node3 ansible_ssh=18.144.163.15
