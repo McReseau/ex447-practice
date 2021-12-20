@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  vars:
+    f: {{ lookup('file','userslist.yml')}}
+  tasks:
+    - user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid | int }}"
+        password: "{{ item.pwd | password_hash('sha512') }}"  
+      loop: "{{ userlist }}"
