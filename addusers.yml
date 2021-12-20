@@ -13,5 +13,5 @@
     - user:
         name: {{ item.name }}
         uid: {{ item.name }}
-        passwordd: {{ item.pwd | password_hash('sha512') }}  
+        password: {{ item.pwd | password_hash('sha512') }}  
       loop: {{ userlist }}
