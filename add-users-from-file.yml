@@ -3,8 +3,8 @@
   become: true
   tasks:
     - user:
-        name: "{{ item.name }}"
-        uid: "{{ item.uid | int }}"
-        password: "{{ item.pwd | password_hash('sha512') }}"  
+        name: "{{ item.users.name }}"
+        uid: "{{ item.users.uid | int }}"
+        password: "{{ item.users.pwd | password_hash('sha512') }}"  
       with_file:
         - userslist.yml
