@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   vars:
-    f: "{{ lookup('file','userslist.yml')}}"
+    f: "{{ q('file','userslist.yml')}}"
   tasks:
     - user:
         name: "{{ item.name }}"
