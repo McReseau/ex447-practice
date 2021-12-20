@@ -11,7 +11,7 @@
         pwd: jim-ww
   tasks:
     - user:
-        name: {{ item.name }}
-        uid: {{ item.name }}
-        password: {{ item.pwd | password_hash('sha512') }}  
-      loop: {{ userlist }}
+        name: "{{ item.name }}"
+        uid: "{{ item.name }}"
+        password: "{{ item.pwd | password_hash('sha512') }}"  
+      loop: "{{ userlist }}"
