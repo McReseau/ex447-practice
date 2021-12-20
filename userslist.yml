@@ -1,13 +1,14 @@
 ---
-- name: billy
-  uid: 5001
-  pwd: billy-pw
-- name: joe
-  uid: 5002
-  pwd: joe-pw
-- name: jim
-  uid: 5003
-  pwd: jim-pw
-- name: bob
-  uid: 5004
-  pwd: bob-pw
+users:
+  - name: billy
+    uid: 5001
+    pwd: billy-pw
+  - name: joe
+    uid: 5002
+    pwd: joe-pw
+  - name: jim
+    uid: 5003
+    pwd: jim-pw
+  - name: bob
+    uid: 5004
+    pwd: bob-pw
