@@ -1,8 +1,8 @@
 ---
 - hosts: all
   become: true
-  vars:
-    f: "{{ q('file','userslist.yml')}}"
+  vars_files:
+    - f: userslist.yml
   tasks:
     - user:
         name: "{{ item.name }}"
