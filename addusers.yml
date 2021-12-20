@@ -12,6 +12,6 @@
   tasks:
     - user:
         name: "{{ item.name }}"
-        uid: "{{ item.uid | integer }}"
+        uid: "{{ item.uid | int }}"
         password: "{{ item.pwd | password_hash('sha512') }}"  
       loop: "{{ userlist }}"
