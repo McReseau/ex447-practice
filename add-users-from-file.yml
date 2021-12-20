@@ -1,11 +1,10 @@
 ---
 - hosts: all
   become: true
-  vars_files:
-    - f: userslist.yml
   tasks:
     - user:
         name: "{{ item.name }}"
         uid: "{{ item.uid | int }}"
         password: "{{ item.pwd | password_hash('sha512') }}"  
-      loop: "{{ f }}"
+      with_file:
+        - userslist.yml
