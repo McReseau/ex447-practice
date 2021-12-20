@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  vars:
+    userlist:
+      - name: bob
+        uid: 5001
+        pwd: bob-pw
+      - name: jim
+        uid: 5002
+        pwd: jim-ww
+  tasks:
+    - user:
+        name: {{ item.name }}
+        uid: {{ item.name }}
+        passwordd: {{ item.pwd | password_hash('sha512') }}  
+      loop: {{ userlist }}
