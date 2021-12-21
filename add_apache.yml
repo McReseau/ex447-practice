@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - yum:
+      name: httpd
+      state: latest
+  - systemd:
+      name: httpd
+      state: started
+      enabled: true
