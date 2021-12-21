@@ -1,0 +1,11 @@
+---
+- hosts: databases
+  become: true
+  tasks:
+  - yum:
+      name: postgresql
+      state: latest
+  - systemd:
+      name: postgresql
+      state: started
+      enabled: true
