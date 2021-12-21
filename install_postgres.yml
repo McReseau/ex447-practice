@@ -4,9 +4,9 @@
   tasks:
   - yum:
       name: 
-        - postgres
-        - postgres-contrib
-        - postgres-server
+        - postgresql
+        - postgresql-contrib
+        - postgresql-server
       state: latest
   - shell: cmd="postgresql-setup --initdb"
   - systemd:
