@@ -1,0 +1,9 @@
+---
+- hosts: databases
+  become: true
+  tasks:
+  - yum:
+      name: 
+        - mariadb-server 
+        - mariadb
+      state: latest
