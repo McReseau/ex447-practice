@@ -7,3 +7,7 @@
         - mariadb-server 
         - mariadb
       state: latest
+  - systemd:
+      name: mariadb
+      state: started
+      enabled: true
