@@ -9,6 +9,8 @@
         - postgresql-server
       state: latest
   - shell: cmd="postgresql-setup initdb"
+    environment: 
+      PATH: /sbin:/bin:/usr/sbin:/usr/bin
     become_user: postgres
     become: yes
   - systemd:
