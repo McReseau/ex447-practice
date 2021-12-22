@@ -1,0 +1,10 @@
+---
+- hosts: databases
+  become: true
+  tasks:
+  - yum:
+      name: 
+        - postgresql
+        - postgresql-contrib
+        - postgresql-server
+      state: absent
