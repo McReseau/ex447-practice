@@ -20,5 +20,5 @@
   - name: Restart httpd
     systemd:
       name: httpd
-      stated: restarted
+      state: restarted
     listen: "index file updated"
