@@ -1,0 +1,11 @@
+---
+- hosts: proxy
+  become: true
+  tasks:
+    - yum:
+        name: squid
+        state: latest
+    - systemd:
+        name: squid
+        state: started
+        enabled: true
