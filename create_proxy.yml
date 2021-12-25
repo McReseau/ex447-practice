@@ -1,0 +1,16 @@
+---
+- name: install haproxy and php roles
+  hosts: all
+
+  vars: 
+    ha_proxy_backend_servers:
+      - name: node2
+        address: node2
+      - name: node3
+        address: node3
+
+  tasks:
+    - name: import haproxy
+      include_role: 
+        name: haproxy-role
+      when: ("proxy" in group_names)
