@@ -1,0 +1,24 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - yum:
+      name: 
+        - httpd
+        - mod_ssl
+      state: latest
+  - systemd:
+      name: httpd
+      state: started
+      enabled: true
+  - name: index
+    template: 
+      src: templates/index.html.j2
+      dest: /var/www/html/index.html
+    notify: "index file updated"
+  handlers:
+  - name: Restart httpd
+    systemd:
+      name: httpd
+      state: restarted
+    listen: "index file updated"
