@@ -1,13 +1,16 @@
 ---
-- hosts: proxy
+- hosts: all
   become: true
   tasks:
     - yum:
         name: haproxy
+      delegate_to: proxy
     - template:
         src: templates/haproxy.cfg.j2
         dest: /etc/haproxy/haproxy.cfg
+      delegate_to: proxy
     - systemd:
         name: haproxy
         state: started
         enabled: true
+      delegate_to: proxy
