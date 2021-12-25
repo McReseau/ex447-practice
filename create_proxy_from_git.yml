@@ -1,5 +1,5 @@
 ---
-- name: install haproxy and php roles
+- name: install haproxy roles from git
   hosts: all
 
   vars: 
