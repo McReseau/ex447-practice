@@ -1,0 +1,13 @@
+---
+- hosts: proxy
+  become: true
+  tasks:
+    - yum:
+        name: haproxy
+    - template:
+        src: templates/haproxy.cfg.j2
+        dest: /etc/haproxy/haproxy.cfg
+    - systemd:
+        name: haproxy
+        state: started
+        enabled: true
